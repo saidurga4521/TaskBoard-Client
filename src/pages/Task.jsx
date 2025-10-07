@@ -143,7 +143,7 @@ const Task = () => {
   // ----------------------------------------------------------------------
   const fetchTasks = async (id) => {
     try {
-      const response = await getTasks(id || project.id);
+      const response = await getTasks(id || project._id);
       const columns = {
         todo: { name: "Todo", items: [] },
         inProgress: { name: "In Progress", items: [] },
@@ -173,8 +173,9 @@ const Task = () => {
   };
 
   useEffect(() => {
+    if (isModalOpen) return;
     fetchTasks(project._id);
-  }, []);
+  }, [isModalOpen]);
 
   // ----------------------------------------------------------------------
   // Create new task (local only)
@@ -314,7 +315,7 @@ const Task = () => {
               whileTap={{ scale: 0.95 }}
               className="flex items-center gap-2 bg-gradient-to-r from-blue-600 to-teal-500 text-white px-5 py-2.5 rounded-xl font-semibold shadow-md hover:shadow-lg transition-all duration-300"
             >
-              ← Back to Projects
+              ← Back to Project's
             </motion.button>
             <h1 className="text-4xl font-bold text-gray-800 tracking-tight">
               {project?.name}
