@@ -75,67 +75,69 @@ VITE_BASE_URL
 - Validates credentials and redirects users to the correct dashboard based on their role.
 -  This ensures only authorized users can access the platform and gives each role a personalized experience.
 ```
-### CreatePayment
+### Projects DashBoard
 ```
-- The Create Payment page allows admins to initiate fee payment requests for students.
+- Displays all created projects in a clean and organized layout.
 
-- Admin selects the student info, enters payment details, and sends a request.
+- Allows users to quickly view, open, or manage their projects.
 
-- The system generates a payment link and records the transaction.
-- This makes it easy for schools to collect fees digitally instead of handling manual payments.
+- Shows an “Add Project” button when no projects are available.
+
+- Provides easy navigation to view tasks within each project.
 ```
-### CheckStatus.jsx
+### Task Board
 ```
-- The Check Status page lets users track the status of payment requests.
+- Displays all tasks of a project categorized as Todo, In Progress, and Done.
 
-- Shows whether a payment is Pending, Successful, or Failed.
+- Allows users to add new tasks or delete the entire project easily.
 
-- Provides transaction details for transparency.
-- Parents and admins can quickly verify payment progress without confusion or delays.
+- Helps in tracking the progress of each task visually.
+
+- Provides a clean and responsive layout for better task management.
 ```
-### Dashboard.jsx
-
-- The Dashboard acts as the control center for trustees
-
-``` 
-   Total transactions
-
-   Successful, pending, failed payments
-
-   Total collected amount 
+### Add Project
 ```
-- Provides a quick overview of financial performance.
-- This helps schools monitor revenue and payment health at a glance.
+- Allows users to create a new project by entering a project name.
 
-### SchoolTransactions.jsx
+- Opens as a modal for a smooth and focused user experience.
+
+- Includes a Create Project button to confirm and add the project.
+
+- Designed with a clean, modern, and responsive UI using Tailwind CSS and Framer Motion.
 ```
-- The School Transactions page lists all transactions for a specific school.
+### Add Task
+```
+- Opens as a modal where users can add a new task to a project.
 
-- Supports search and filtering by student, date, or payment status.
+- Contains input fields for Title, Description, and Status selection.
 
-- Allows admins/trustees to drill down into transaction history for each school.
-- Ensures clear tracking of fees collected per institution, making audits and reports easy.
+- Provides a Create Task button to confirm and add the task.
+
+- Built with a responsive and modern UI using Tailwind CSS and Framer Motion for smooth animations.
 ```
 
 ## Scope and Extension
 
-- While Paysphere already covers core payment and school management features, there is plenty of room to scale and enhance the platform in the future:
+- TaskBoard covers core project and task management features, but there’s significant potential to scale and enhance the platform for Better results:
 
-### Multi-Currency & International Payments
+### Multi-User & Authentication
 ```
-- Expand beyond INR and enable payments in multiple currencies - - - (USD, EUR, etc.), along with real-time conversion. 
-This would make the platform usable for international schools.
+ - Implement user authentication and roles so multiple users can collaborate on projects, with permissions for project owners, team members, and viewers.
+
+```
+### Drag-and-Drop Task Management
+```
+- Enable drag-and-drop functionality to move tasks between Todo, In Progress, and Done columns for more interactive task management.
+
 ```
 ### Notifications & Reminders
 ```
-- Integrate email, SMS, or push notifications to remind parents about pending payments and confirm successful transactions, improving communication and reducing defaults.
-```
-### Advanced Analytics Dashboard
-```
--Introduce a visual analytics dashboard with charts and graphs that highlight fee collection trends, payment delays, and school-wise performance insights.
-```
-### Role-based Dashboards
+- Integrate notifications to alert users about upcoming deadlines, task updates, or project changes to improve productivity and coordination.
 
 ```
-- Enhance role management with separate dashboards for trustees, school admins, and parents/students, ensuring tailored access to only relevant data and actions.
+### Advanced Analytics & Reporting
+
+```
+- Introduce dashboards and charts that visualize project progress, task completion rates, and workload distribution to help users track performance and plan better.
+
 ```
