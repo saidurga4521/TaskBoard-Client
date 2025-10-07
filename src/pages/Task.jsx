@@ -141,9 +141,9 @@ const Task = () => {
   // ----------------------------------------------------------------------
   // Fetch tasks from API
   // ----------------------------------------------------------------------
-  const fetchTasks = async () => {
+  const fetchTasks = async (id) => {
     try {
-      const response = await getTasks(project._id || project.id);
+      const response = await getTasks(id || project.id);
       const columns = {
         todo: { name: "Todo", items: [] },
         inProgress: { name: "In Progress", items: [] },
@@ -173,7 +173,7 @@ const Task = () => {
   };
 
   useEffect(() => {
-    fetchTasks();
+    fetchTasks(project._id);
   }, []);
 
   // ----------------------------------------------------------------------

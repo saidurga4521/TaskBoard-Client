@@ -25,7 +25,7 @@ const AddTask = ({ onAddTask, onClose, project, fetchTasks }) => {
         projectId: project._id,
       });
       console.log("the response", response.data);
-      fetchTasks();
+      fetchTasks(project._id);
       onClose();
     } catch (error) {
       console.log("the error", error.message);
